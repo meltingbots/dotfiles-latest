@@ -103,10 +103,10 @@ float determineStartVertexFactor(vec2 a, vec2 b) {
     return 1.0 - max(condition1, condition2);
 }
 
-const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0);
-const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 1.0);
-// const vec4 TRAIL_COLOR = vec4(0.482, 0.886, 1.0, 1.0);
-// const vec4 TRAIL_COLOR_ACCENT = vec4(0.0, 0.424, 1.0, 1.0);
+//const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 0.3);
+//const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 0.3);
+const vec4 TRAIL_COLOR = vec4(0.482, 0.886, 1.0, 1.0);
+const vec4 TRAIL_COLOR_ACCENT = vec4(0.0, 0.424, 1.0, 1.0);
 const vec4 CURRENT_CURSOR_COLOR = TRAIL_COLOR;
 const vec4 PREVIOUS_CURSOR_COLOR = TRAIL_COLOR;
 const float DURATION = 0.3;
@@ -157,6 +157,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     // float pCursorDistance = sdBox(vu, previousCursor.xy - (previousCursor.zw * offsetFactor), previousCursor.zw * 0.5);
     // newColor = mix(newColor, PREVIOUS_CURSOR_COLOR, antialising(pCursorDistance));
 
-    fragColor = mix(fragColor, newColor, 1.);
-    // fragColor = mix(fragColor, newColor, 1.0 - alphaModifier);
+    fragColor = mix(fragColor, newColor, 0.1);
+    //fragColor = mix(fragColor, newColor, 1.0 - alphaModifier);
 }
